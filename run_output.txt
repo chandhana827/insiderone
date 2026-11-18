@@ -1,0 +1,118 @@
+Removed 6 exact duplicate rows (1206 -> 1200)
+Standardised work_mode casing/spelling in 9 rows (On-site/Hybrid/Remote)
+15 rows had blank source -> labelled 'unknown' (kept for Q2/Q3, left out of the Q1 ranking)
+Checked: hired⊂interviewed⊂shortlisted holds; no shortlisted/hired row lacks a reply; dates all Jul-Sep 2026 
+
+Q1 overall
+           applications  hires  hires_per_100
+source                                      
+referral         121.0   13.0          10.74
+email            160.0   13.0           8.12
+search           439.0   25.0           5.69
+college          208.0    7.0           3.37
+social           257.0    6.0           2.33 
+
+Q1 hires per 100, by role x source
+ source         college  email  referral  search  social
+role_category                                          
+Data               0.0    3.0       4.8     7.4     4.4
+Design             6.7    7.4      23.1    10.6     3.1
+Finance            0.0    0.0       0.0     2.9     0.0
+Marketing          5.6   15.4      22.2     3.8     4.1
+Operations        20.0    5.3      11.1     5.8     0.0
+Software           0.0   11.4       7.0     4.8     1.4 
+
+Applications (n)
+ source         college  email  referral  search  social
+role_category                                          
+Data                34     33        21      81      45
+Design              30     27        13      47      32
+Finance             20     11         8      34      27
+Marketing           36     26        18      79      49
+Operations          15     19        18      52      33
+Software            73     44        43     146      71 
+
+Top source per role
+ role_category   source    per100  size  sum
+         Data   search  7.407407    81    6
+       Design referral 23.076923    13    3
+      Finance   search  2.941176    34    1
+    Marketing referral 22.222222    18    4
+   Operations  college 20.000000    15    3
+     Software    email 11.363636    44    5 
+
+Referral vs all other sources: 10.7 vs 4.8 per 100; diff CI [0.6, 11.9]
+Referral per-100 95% CI [5.8, 16.5]
+
+month 7 {'college': 4.2, 'email': 11.3, 'referral': 17.1, 'search': 7.6, 'social': 2.2}
+month 8 {'college': 2.9, 'email': 7.5, 'referral': 7.0, 'search': 4.4, 'social': 5.1}
+month 9 {'college': 2.9, 'email': 5.6, 'referral': 9.3, 'search': 5.0, 'social': 0.0}
+
+Finish-all-4 rate by source:
+ {'college': 35.6, 'email': 34.4, 'referral': 37.2, 'search': 31.0, 'social': 35.0, 'unknown': 20.0} 
+
+Q2
+                 size  sum   mean     pct
+finished                                
+Did not finish   797   74  0.093   9.285
+Finished all 4   403  195  0.484  48.387
+Diff = 39.1 pts, 95% CI [33.7, 44.4]; ratio = 5.2x
+By steps_done:
+ {0: 8.5, 1: 5.6, 2: 8.9, 3: 12.8, 4: 48.4}
+By role
+ finished       Did not finish  Finished all 4  gap_pts
+role_category                                         
+Data                     10.3            51.6     41.2
+Design                    8.4            57.4     49.0
+Finance                   7.7            47.4     39.7
+Marketing                10.4            52.3     41.9
+Operations               14.1            50.0     35.9
+Software                  6.7            41.5     34.9
+By paid
+ finished  Did not finish  Finished all 4
+paid                                    
+Paid                 9.5            49.4
+Unpaid               8.9            47.0 
+
+Finish-all-4 rate by paid:
+ {'Paid': 32.6, 'Unpaid': 35.2} 
+
+Q3
+             n  no_reply_pct  median_days  mean_days  p75_days  p90_days
+paid                                                                   
+Paid    734.0         13.08          3.0       3.22       4.0       6.0
+Unpaid  466.0         29.61          7.0       7.62      10.0      14.0
+No-reply gap (paid - unpaid) = -16.5 pts [11.7, 21.1] (unpaid minus paid, sign flipped CI above)
+Median reply gap unpaid-paid = 4.0 d [3.0, 4.0]
+By role (median days / no-reply %):
+               med        noreply             n       
+paid          Paid Unpaid    Paid Unpaid   Paid Unpaid
+role_category                                         
+Data           3.0    6.0     6.8   27.9  133.0   86.0
+Design         3.0    7.0    13.2   17.2   91.0   58.0
+Finance        2.0    6.5    14.1   38.5   64.0   39.0
+Marketing      3.0    6.0    12.7   31.3  126.0   83.0
+Operations     3.0    6.0    15.5   32.7   84.0   55.0
+Software       3.0    7.0    15.7   31.0  236.0  145.0
+By work_mode:
+            med        noreply       
+paid      Paid Unpaid    Paid Unpaid
+work_mode                           
+hybrid     3.0    7.0    12.1   27.5
+on_site    3.0    7.0    14.1   30.1
+remote     3.0    6.0    13.2   31.0
+No-reply % by month x paid:
+ paid        Paid  Unpaid
+applied_on              
+7           11.5    27.0
+8           15.3    34.1
+9           12.8    27.2
+By stipend tier:
+             n  med  noreply
+tier                       
+0       466.0  7.0     29.6
+1-10k   244.0  3.0     10.7
+10-20k  245.0  3.0     14.7
+20-40k  245.0  3.0     13.9
+Paid share by role:
+ {'Data': 60.7, 'Design': 61.1, 'Finance': 62.1, 'Marketing': 60.3, 'Operations': 60.4, 'Software': 61.9}

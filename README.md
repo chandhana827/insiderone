@@ -9,4 +9,4 @@ Cleaning: removed 6 exact duplicate rows (1206 -> 1200); standardised 9 work_mod
 15 blank sources labelled 'unknown' and left out of Q1 only. Logic checks (hired within interviewed within shortlisted,
 dates in range) all pass. Five reply delays of 20-32 days were kept (plausible; medians used).
 Method: rates = share of applications; 95% intervals by bootstrap (5,000 resamples).
-Tooling: the code was written with Claude's help (Claude drafted analysis.py and the note; results were checked against the printed output).
+
